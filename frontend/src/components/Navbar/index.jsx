@@ -11,6 +11,7 @@ export default function Navbar() {
         name="search-bar"
         value={searchBar}
         placeholder="Search..."
+        onChange={(e) => setSearchBar(e.target.value)}
       />
       <button type="button">Shop</button>
       <button type="button">New Arrivals</button>
