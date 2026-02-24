@@ -4,20 +4,36 @@ import style from "./Navbar.module.css";
 export default function Navbar() {
   const [searchBar, setSearchBar] = useState("");
   return (
-    <div className={style["container"]}>
-      <h2>Timeless Watches</h2>
-      <input
-        type="text"
-        name="search-bar"
-        value={searchBar}
-        placeholder="Search..."
-        onChange={(e) => setSearchBar(e.target.value)}
-      />
-      <button type="button">Shop</button>
-      <button type="button">New Arrivals</button>
-      <button type="button">Brands</button>
-      <button type="button">About</button>
-      <button type="button">Contact</button>
-    </div>
+    <header className={style["container"]}>
+      <div className={style["logo"]}>Timeless Watches</div>
+      <div className={style["search-bar"]}>
+        <input
+          type="text"
+          name="search-bar"
+          value={searchBar}
+          placeholder="Search..."
+          onChange={(e) => setSearchBar(e.target.value)}
+        />
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">Shop</a>
+          </li>
+          <li>
+            <a href="#">New Arrivals</a>
+          </li>
+          <li>
+            <a href="#">Brands</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 }
