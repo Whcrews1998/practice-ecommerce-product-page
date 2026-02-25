@@ -1,4 +1,13 @@
-.container {
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: midnightblue;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-container {
   gap: 40px;
   display: flex;
   flex-direction: row;
@@ -7,7 +16,6 @@
   background-color: midnightblue;
   height: 70px;
   padding: 0px 2rem;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
@@ -23,11 +31,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  width: 500px;
 }
 
 .search-bar input {
   flex: 1;
-  margin: 0 20px;
   padding: 10px 5px;
   border-radius: 5px;
   border: 1px solid midnightblue;
@@ -41,11 +50,11 @@
 }
 
 /* NAVBAR */
-.container nav {
+.navbar-container nav {
   height: 100%;
 }
 
-.container nav ul {
+.navbar-container nav ul {
   display: flex;
   gap: 60px;
   list-style: none;
@@ -53,7 +62,7 @@
   height: 100%;
 }
 
-.container nav ul li a {
+.navbar-container nav ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,7 +72,7 @@
   transition: color 0.2s ease;
 }
 
-.container nav ul li a:hover {
+.navbar-container nav ul li a:hover {
   color: grey;
   text-decoration: none;
 }
