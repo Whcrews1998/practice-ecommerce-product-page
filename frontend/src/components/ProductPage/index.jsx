@@ -21,8 +21,8 @@ export default function ProductPage() {
           </div>
         </div>
         <div className={style["product-details"]}>
-          <h3>Elegant Luxury Watch</h3>
-          <p>Prestige Time Co.</p>
+          <h1>Elegant Luxury Watch</h1>
+          <p className={style["brand"]}>Prestige Time Co.</p>
           <div className={style["prices"]}>
             <span className={style["current-price"]}>$499.99</span>
             <span className={style["original-price"]}>$799.99</span>
@@ -44,7 +44,9 @@ export default function ProductPage() {
               -
             </button>
             <input
-              type="number"
+              type="text"
+              inputMode="numeric"
+              patterm="[0-9]*"
               name="amount"
               value={purchaseAmount}
               onChange={(e) => setPurchaseAmount(e.target.value)}
