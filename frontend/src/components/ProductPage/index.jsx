@@ -64,6 +64,9 @@ export default function ProductPage() {
           <div className={style["offer-container"]}>{/* IMPLEMENT */}</div>
         </div>
       </div>
+      <footer>
+        <p>&copy; 2024 Timeless Watches. Crafted for Excellence.</p>
+      </footer>
     </div>
   );
 }
