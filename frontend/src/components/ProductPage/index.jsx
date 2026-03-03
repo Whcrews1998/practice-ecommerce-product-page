@@ -3,22 +3,47 @@ import { useState } from "react";
 import style from "./ProductPage.module.css";
 
 export default function ProductPage() {
+  const images = [
+    "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/1.jpg?5491",
+    "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/2.jpg?5491')",
+    "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/5.jpg?5491",
+    "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/7.jpg?5491",
+    "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/2.jpg?5491",
+    "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/5.jpg?5491",
+    "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/7.jpg?5491",
+  ];
+  const [primaryImageIndex, setPrimaryImageIndex] = useState(0);
   const [purchaseAmount, setPurchaseAmount] = useState(0);
+
+  function PrimaryImage() {
+    return (
+      <div className={style["primary-image"]}>
+        <img src={images[primaryImageIndex]} />
+      </div>
+    );
+  }
+
+  function SecondaryImages() {
+    const items = [];
+    const imgCount = 4;
+
+    for (let i = 0; i < images.length; i++) {
+      if (i === primaryImageIndex) continue;
+      items.push(
+        <img key={i} src={images[i]} onClick={() => setPrimaryImageIndex(i)} />,
+      );
+    }
+
+    return <div className={style["secondary-images"]}>{items}</div>;
+  }
 
   return (
     <div className={style["container"]}>
       <Navbar />
       <div className={style["product-container"]}>
         <div className={style["product-images"]}>
-          <div className={style["primary-image"]}>
-            <img src="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/1.jpg?5491" />
-          </div>
-          <div className={style["secondary-images"]}>
-            <img src="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/1.jpg?5491" />
-            <img src="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/1.jpg?5491" />
-            <img src="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/1.jpg?5491" />
-            <img src="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/1.jpg?5491" />
-          </div>
+          <PrimaryImage />
+          <SecondaryImages />
         </div>
         <div className={style["product-details"]}>
           <h1>Elegant Luxury Watch</h1>
